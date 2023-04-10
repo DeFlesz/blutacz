@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        >
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_alignParentTop="true"
+            android:id="@+id/newDevicesHeadlineLayout"
+            android:layout_marginHorizontal="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/newDevicesHeadline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Devices found:"
+                style="@style/TextAppearance.Material3.HeadlineMedium"
+                />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/scanDevices"
+                style="?attr/materialIconButtonFilledTonalStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_baseline_refresh_24"
+                />
+        </LinearLayout>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressIndicator"
+            android:layout_below="@id/newDevicesHeadlineLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:showAnimationBehavior="outward"
+            app:hideAnimationBehavior="inward"
+            android:indeterminate="true"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@id/progressIndicator"
+            android:id="@+id/newDevicesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+
+
+        <TextView
+            android:layout_below="@id/newDevicesRecyclerView"
+            android:id="@+id/pairedDevicesHeadline"
+            android:layout_marginHorizontal="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paired devices:"
+            style="@style/TextAppearance.Material3.HeadlineMedium"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pairedDevicesRecyclerView"
+            android:layout_below="@id/pairedDevicesHeadline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+
+        <TextView
+            android:layout_below="@id/pairedDevicesRecyclerView"
+            android:id="@+id/macadressHeadline"
+            android:layout_marginHorizontal="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Macadress:"
+            style="@style/TextAppearance.Material3.HeadlineMedium"
+            />
+        <TextView
+            android:layout_below="@id/macadressHeadline"
+            android:id="@+id/macadressBody"
+            android:layout_marginHorizontal="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="::::"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            />
+
+<!--        <ImageView-->
+<!--            android:layout_below="@id/macadressHeadline"-->
+<!--            android:id="@+id/bluetooth_available"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/ic_baseline_bluetooth_24"-->
+<!--            />-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_below="@id/bluetooth_available"-->
+<!--            android:id="@+id/buttonActionsLayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:paddingHorizontal="8dp"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            >-->
+
+<!--            <com.google.android.material.materialswitch.MaterialSwitch-->
+<!--                android:id="@+id/setVisibility"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:text="visibility to other devices"-->
+<!--                />-->
+
+<!--        </RelativeLayout>-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/enableDiscoverability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="show to other devices"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="4dp"
+            android:layout_below="@id/macadressBody"
+            />
+
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressIndicator2"
+            android:layout_below="@id/enableDiscoverability"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:showAnimationBehavior="outward"
+            app:hideAnimationBehavior="inward"
+            android:indeterminate="true"
+            />
+    </RelativeLayout>
+</ScrollView>

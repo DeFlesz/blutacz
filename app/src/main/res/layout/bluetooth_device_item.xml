@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="8dp"
+    android:paddingRight="24dp"
+    android:paddingVertical="8dp"
+    android:background="?colorSurface"
+    >
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/deviceIcon"
+        android:layout_marginHorizontal="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_device_unknown_24"
+        android:layout_centerVertical="true"
+        />
+
+    <LinearLayout
+        android:layout_toEndOf="@id/deviceIcon"
+        android:layout_marginLeft="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/deviceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Device name"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:textColor="?colorOnSurface"
+            />
+
+        <TextView
+            android:id="@+id/deviceMacadress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="macadress"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:textColor="?colorOnSurfaceVariant"
+            />
+    </LinearLayout>
+</RelativeLayout>
