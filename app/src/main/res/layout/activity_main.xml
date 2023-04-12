@@ -6,7 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bluetoothEnable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="enable bluetooth"
+            android:layout_margin="4dp"
+            style="?materialButtonOutlinedStyle"
+            android:visibility="gone"
+            />
+
     <RelativeLayout
+        android:id="@+id/container_bt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingVertical="8dp"
@@ -38,8 +56,8 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/scanDevices"
                 style="?attr/materialIconButtonFilledTonalStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 app:icon="@drawable/ic_baseline_refresh_24"
                 />
         </LinearLayout>
@@ -49,6 +67,7 @@
             android:layout_below="@id/newDevicesHeadlineLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
             app:showAnimationBehavior="outward"
             app:hideAnimationBehavior="inward"
             android:indeterminate="true"
@@ -65,11 +84,12 @@
 
 
         <TextView
+            android:gravity="center_vertical"
             android:layout_below="@id/newDevicesRecyclerView"
             android:id="@+id/pairedDevicesHeadline"
             android:layout_marginHorizontal="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:text="Paired devices:"
             style="@style/TextAppearance.Material3.HeadlineMedium"
             />
@@ -129,26 +149,41 @@
 <!--                />-->
 
 <!--        </RelativeLayout>-->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/enableDiscoverability"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="show to other devices"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
+
+        <LinearLayout
             android:layout_margin="4dp"
             android:layout_below="@id/macadressBody"
-            />
-
-
-        <com.google.android.material.progressindicator.LinearProgressIndicator
-            android:id="@+id/progressIndicator2"
-            android:layout_below="@id/enableDiscoverability"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:showAnimationBehavior="outward"
-            app:hideAnimationBehavior="inward"
-            android:indeterminate="true"
-            />
+            android:orientation="vertical"
+            android:gravity="bottom"
+            >
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/enableDiscoverability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="show to other devices"
+                android:layout_gravity="center_horizontal"
+                android:layout_below="@id/macadressBody"
+                android:layout_above="@id/progressIndicator2"
+                style="?materialButtonOutlinedStyle"
+                />
+
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progressIndicator2"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:showAnimationBehavior="outward"
+                app:hideAnimationBehavior="inward"
+                android:layout_alignParentBottom="true"
+                android:indeterminate="true"
+                />
+
+        </LinearLayout>
+
     </RelativeLayout>
+    </LinearLayout>
 </ScrollView>
