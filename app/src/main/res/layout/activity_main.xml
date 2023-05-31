@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Devices found:"
-                style="@style/TextAppearance.Material3.HeadlineMedium"
+                style="@style/TextAppearance.Material3.HeadlineSmall"
                 />
 
             <Space
@@ -79,6 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:nestedScrollingEnabled="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             />
 
@@ -91,7 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:text="Paired devices:"
-            style="@style/TextAppearance.Material3.HeadlineMedium"
+            style="@style/TextAppearance.Material3.HeadlineSmall"
             />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -100,6 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:nestedScrollingEnabled="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             />
 
@@ -110,7 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Macadress:"
-            style="@style/TextAppearance.Material3.HeadlineMedium"
+            style="@style/TextAppearance.Material3.HeadlineSmall"
             />
         <TextView
             android:layout_below="@id/macadressHeadline"
